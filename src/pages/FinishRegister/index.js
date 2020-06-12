@@ -9,7 +9,7 @@ import arrow_left from '../../assets/arrow_left.svg';
 
 import TextField from '../../components/TextField';
 
-export default function Register({ history }) {
+export default function FinishRegister({ history}) {
   function handleNavigation( route ) {
     history.push( route );
   };
@@ -19,7 +19,7 @@ export default function Register({ history }) {
       <div className="card">
         <div className="header-card">
           <img
-            onClick={() => handleNavigation('/')}
+            onClick={() => handleNavigation('/register')}
             src={ arrow_left }
             className="arrow-left"
             alt="Arrow Left"
@@ -27,37 +27,50 @@ export default function Register({ history }) {
 
           <img src={ logo } className="logo" alt="CHATDEV"/>
 
-          <span className="sub-logo">Entre Para a Comunidade!</span>
+          <span className="sub-logo">Finalize Seu Cadastro!</span>
         </div>
 
-        <div className="inputs-view">
+        <div className="inputs-view max-height">
+          <div className="input-view-max">
+            <TextField
+              placeholder="Código de Verificação"
+              icon={ info }
+              popupText="Enviado para seu email!"
+            />
+
+            <span className="hint-input">Verifique Email Informado Anteriormente</span>
+          </div>
+
           <TextField
-            placeholder="Email"
+            className="margin-bottom"
+            placeholder="Senha"
             icon={ info }
-            popupText="Seu email para cadastro"
+            popupText="Sua senha de acesso!"
+            type="password"
           />
 
           <TextField
-            placeholder="Usuário GitHub"
+            placeholder="Confirmar senha"
             icon={ info }
-            popupText="Seu usuário GitHub!"
+            popupText="Confirme sua senha!"
+            type="password"
           />
         </div>
 
-        <div className="buttons-view">
+        <div className="buttons-view bt-max">
           <div />
 
           <button
             onClick={() => handleNavigation('/finish-register')}
             className="button"
           >
-            CONTINUAR
+            ENTRAR
           </button>
 
           <div />
         </div>
 
-        <div className="github">
+        <div className="github gh-max">
           <span className="text-github">Contribua com o projeto</span>
 
           <img src={ github } className="img-github" alt="GitHub"/>
