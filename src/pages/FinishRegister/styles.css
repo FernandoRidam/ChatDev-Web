@@ -1,0 +1,26 @@
+.max-height {
+  height: 214px;
+  margin-top: 46px;
+}
+
+.hint-input {
+  font-size: 14px;
+  font-weight: 300;
+  color: #25A1D0;
+  font-style: italic;
+}
+
+.input-view-max {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 79px;
+}
+
+.bt-max {
+  margin-top: 65px;
+}
+
+.gh-max {
+  margin-top: 55px;
+}
