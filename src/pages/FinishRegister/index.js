@@ -9,6 +9,10 @@ import arrow_left from '../../assets/arrow_left.svg';
 
 import TextField from '../../components/TextField';
 
+import {
+  handlePopUpShow,
+} from '../../utils/iconsFunctions';
+
 export default function FinishRegister({ history}) {
   function handleNavigation( route ) {
     history.push( route );
@@ -36,9 +40,10 @@ export default function FinishRegister({ history}) {
               placeholder="Código de Verificação"
               icon={ info }
               popupText="Enviado para seu email!"
+              iconFunction={ handlePopUpShow }
             />
 
-            <span className="hint-input">Verifique Email Informado Anteriormente</span>
+            <span className="hint-input">Verifique sua caixa de email</span>
           </div>
 
           <TextField
@@ -46,6 +51,7 @@ export default function FinishRegister({ history}) {
             placeholder="Senha"
             icon={ info }
             popupText="Sua senha de acesso!"
+            iconFunction={ handlePopUpShow }
             type="password"
           />
 
@@ -53,6 +59,7 @@ export default function FinishRegister({ history}) {
             placeholder="Confirmar senha"
             icon={ info }
             popupText="Confirme sua senha!"
+            iconFunction={ handlePopUpShow }
             type="password"
           />
         </div>
@@ -61,7 +68,7 @@ export default function FinishRegister({ history}) {
           <div />
 
           <button
-            onClick={() => handleNavigation('/finish-register')}
+            onClick={() => handleNavigation('/home')}
             className="button"
           >
             ENTRAR

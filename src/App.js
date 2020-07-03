@@ -4,6 +4,8 @@ import Routes from './routes';
 
 export default function App() {
   return (
-    <Routes />
+    <div className="content">
+      <Routes />
+    </div>
   );
 };

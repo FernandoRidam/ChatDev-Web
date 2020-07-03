@@ -8,6 +8,10 @@ import info from '../../assets/info.svg';
 
 import TextField from '../../components/TextField';
 
+import {
+  handlePopUpShow,
+} from '../../utils/iconsFunctions';
+
 export default function Login({ history }) {
   function handleNavigation( route ) {
     history.push( route );
@@ -27,12 +31,14 @@ export default function Login({ history }) {
             placeholder="Usuário GitHub"
             icon={ info }
             popupText="Seu usuário GitHub!"
+            iconFunction={ handlePopUpShow }
           />
 
           <TextField
             placeholder="Senha"
             icon={ info }
             popupText="Sua senha de acesso!"
+            iconFunction={ handlePopUpShow }
             type="password"
           />
         </div>

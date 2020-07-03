@@ -1,0 +1,29 @@
+.list-groups {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 55px;
+  background-color: transparent;
+}
+
+.logo-header-list {
+  width: 131px;
+  height: 45px;
+  margin-left: 15px;
+}
+
+.menu-header-list {
+  width: 35px;
+  height: 27px;
+  margin-right: 15px;
+}

@@ -7,24 +7,9 @@ export default function TextField( props ) {
     placeholder,
     icon,
     type,
-    popupText
+    popupText,
+    iconFunction,
   } = props;
-
-  function handlePopUpShow() {
-    if( document.getElementById(placeholder) !== null ) {
-      const popup = document.getElementById(placeholder).classList;
-
-      if( !popup.contains('popup-active')) {
-        activePopUp( popup );
-
-        setTimeout(() => activePopUp( popup ), 3000);
-      }
-    }
-  };
-
-  function activePopUp( popup ) {
-    popup.toggle('popup-active');
-  }
 
   return(
     <div className="text-field">
@@ -34,7 +19,7 @@ export default function TextField( props ) {
         type={ type || 'text'}
       />
 
-      { icon ? <img onClick={ handlePopUpShow } className="text-field-icon" src={ icon } alt=""/> : <></>}
+      { icon ? <img onClick={() => iconFunction( placeholder  )} className="text-field-icon" src={ icon } alt=""/> : <></>}
 
       { popupText ? <div id={ placeholder } className="text-field-popup"><span className="popup-text">{ popupText }</span></div> : <></>}
     </div>

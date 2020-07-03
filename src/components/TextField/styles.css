@@ -26,6 +26,12 @@
   width: 23px;
   height: 23px;
   cursor: pointer;
+
+  transition: all .2s;
+}
+
+.text-field-icon:active {
+  opacity: .8;
 }
 
 .text-field-popup {
