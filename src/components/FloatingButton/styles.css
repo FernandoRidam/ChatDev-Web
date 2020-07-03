@@ -1,0 +1,24 @@
+.floating-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #25A1D0;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+
+  transition: opacity .2s;
+}
+
+.floating-button:active {
+  opacity: .6;
+}
+
+.image-plus {
+  width: 25px;
+  height: 25px;
+}

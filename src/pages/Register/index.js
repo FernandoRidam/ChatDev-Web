@@ -9,6 +9,10 @@ import arrow_left from '../../assets/arrow_left.svg';
 
 import TextField from '../../components/TextField';
 
+import {
+  handlePopUpShow,
+} from '../../utils/iconsFunctions';
+
 export default function Register({ history }) {
   function handleNavigation( route ) {
     history.push( route );
@@ -35,12 +39,14 @@ export default function Register({ history }) {
             placeholder="Email"
             icon={ info }
             popupText="Seu email para cadastro"
+            iconFunction={ handlePopUpShow }
           />
 
           <TextField
             placeholder="Usuário GitHub"
             icon={ info }
             popupText="Seu usuário GitHub!"
+            iconFunction={ handlePopUpShow }
           />
         </div>
 
