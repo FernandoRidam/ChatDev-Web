@@ -2,9 +2,11 @@ import React from 'react';
 
 import './styles.css';
 
-import Welcome from '../SubPages/Welcome';
-import ListGroups from '../SubPages/ListGroups';
-import Chat from '../SubPages/Chat';
+import {
+  Welcome,
+  ListGroups,
+  Chat,
+} from '../SubPages';
 
 import {
   FloatingButton

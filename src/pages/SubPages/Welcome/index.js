@@ -2,9 +2,11 @@ import React from 'react';
 
 import './styles.css';
 
-import logo from '../../../assets/logo.png';
+import {
+  logo
+} from '../../../assets';
 
-export default function Welcome() {
+export function Welcome() {
   return(
     <div className="welcome">
       <div className="header-card">

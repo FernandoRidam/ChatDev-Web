@@ -2,9 +2,11 @@ import React from 'react';
 
 import './styles.css';
 
-import logo from '../../../assets/logo.png';
-import search from '../../../assets/search.svg';
-import menu from '../../../assets/menu.svg';
+import {
+  logo,
+  search,
+  menu,
+} from '../../../assets';
 
 import {
   TextField,
@@ -16,7 +18,7 @@ import {
   searchGroup,
 } from '../../../utils/iconsFunctions';
 
-export default function ListGroups() {
+export function ListGroups() {
   return(
     <div className="list-groups">
       <div className="header">

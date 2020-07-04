@@ -1,6 +1,8 @@
 import React from 'react';
 
-import message from '../../assets';
+import {
+  message
+} from '../../assets';
 
 import './styles.css';
 

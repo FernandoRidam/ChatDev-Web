@@ -10,6 +10,12 @@
   background-color: #474747;
 }
 
+.card-container:active {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+  transition: all 0.2s;
+}
+
 .information {
   display: flex;
   flex-direction: column;
