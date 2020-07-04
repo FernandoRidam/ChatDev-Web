@@ -18,7 +18,7 @@ import {
   searchGroup,
 } from '../../../utils/iconsFunctions';
 
-export default function ListGroups() {
+export function ListGroups() {
   return(
     <div className="list-groups">
       <div className="header">

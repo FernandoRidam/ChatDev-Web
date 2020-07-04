@@ -6,7 +6,7 @@ import {
   logo
 } from '../../../assets';
 
-export default function Welcome() {
+export function Welcome() {
   return(
     <div className="welcome">
       <div className="header-card">
