@@ -1,0 +1,21 @@
+.separator {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 87%;
+  margin-top: 20px;
+}
+
+.separator span {
+  font-size: 14px;
+  font-weight: 100;
+  color: #DBDBDB;
+  padding-right: 10px;
+}
+
+.separator .line-separator {
+  width: 80%;
+  height: 1px;
+  background-color: #DBDBDB;
+}
