@@ -4,7 +4,7 @@ import plus from '../../assets/plus.svg';
 
 import './styles.css';
 
-export default function FloatingButton() {
+export function FloatingButton() {
   return (
     <div className="floating-button">
       <img className="image-plus" src={ plus } alt="Adicionar" />

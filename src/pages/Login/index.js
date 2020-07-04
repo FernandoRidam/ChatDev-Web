@@ -6,7 +6,9 @@ import logo from '../../assets/logo.png';
 import github from '../../assets/github.png';
 import info from '../../assets/info.svg';
 
-import TextField from '../../components/TextField';
+import {
+  TextField
+} from '../../components';
 
 import {
   handlePopUpShow,

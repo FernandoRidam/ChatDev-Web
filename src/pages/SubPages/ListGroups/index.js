@@ -6,9 +6,11 @@ import logo from '../../../assets/logo.png';
 import search from '../../../assets/search.svg';
 import menu from '../../../assets/menu.svg';
 
-import TextField from '../../TextField';
-import Separator from '../../Separator';
-import CardGroup from '../../CardGroup';
+import {
+  TextField,
+  Separator,
+  CardGroup,
+} from '../../../components';
 
 import {
   searchGroup,

@@ -2,7 +2,7 @@ import React from 'react';
 
 import './styles.css';
 
-export default function TextField( props ) {
+export function TextField( props ) {
   const {
     placeholder,
     icon,

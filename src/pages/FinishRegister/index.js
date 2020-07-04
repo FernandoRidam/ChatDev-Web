@@ -7,7 +7,9 @@ import github from '../../assets/github.png';
 import info from '../../assets/info.svg';
 import arrow_left from '../../assets/arrow_left.svg';
 
-import TextField from '../../components/TextField';
+import {
+  TextField
+} from '../../components';
 
 import {
   handlePopUpShow,

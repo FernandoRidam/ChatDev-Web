@@ -2,9 +2,13 @@ import React from 'react';
 
 import './styles.css';
 
-import Welcome from '../../components/SubPages/Welcome';
-import ListGroups from '../../components/SubPages/ListGroups';
-import FloatingButton from '../../components/FloatingButton';
+import Welcome from '../SubPages/Welcome';
+import ListGroups from '../SubPages/ListGroups';
+import Chat from '../SubPages/Chat';
+
+import {
+  FloatingButton
+} from '../../components';
 
 export default function Home({ history }) {
   function handleNavigation( route ) {
@@ -14,7 +18,9 @@ export default function Home({ history }) {
   return (
     <div className="container-home">
       <div className="main">
-        <Welcome />
+        {/* <Welcome /> */}
+
+        <Chat />
       </div>
 
       <div className="right-menu">

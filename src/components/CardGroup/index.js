@@ -1,10 +1,10 @@
 import React from 'react';
 
-import message from '../../assets/message.svg';
+import message from '../../assets';
 
 import './styles.css';
 
-export default function CardGroup({ title, subject }) {
+export function CardGroup({ title, subject }) {
   return (
     <div className="card-container">
       <div className="information">
