@@ -2,10 +2,12 @@ import React from 'react';
 
 import './styles.css';
 
-import logo from '../../assets/logo.png';
-import github from '../../assets/github.png';
-import info from '../../assets/info.svg';
-import arrow_left from '../../assets/arrow_left.svg';
+import {
+  logo,
+  github,
+  info,
+  arrow_left,
+} from '../../assets';
 
 import {
   TextField

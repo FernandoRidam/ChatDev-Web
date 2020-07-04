@@ -2,9 +2,11 @@ import React from 'react';
 
 import './styles.css';
 
-import logo from '../../../assets/logo.png';
-import search from '../../../assets/search.svg';
-import menu from '../../../assets/menu.svg';
+import {
+  logo,
+  search,
+  menu,
+} from '../../../assets';
 
 import {
   TextField,

@@ -1,6 +1,8 @@
 import React from 'react';
 
-import plus from '../../assets/plus.svg';
+import {
+  plus,
+} from '../../assets';
 
 import './styles.css';
 
