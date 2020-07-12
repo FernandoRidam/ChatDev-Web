@@ -32,3 +32,12 @@
 .menu-header-list:active {
   opacity: .8;
 }
+
+.list {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 20px;
+  margin-top: 5px;
+  padding-bottom: 15px;
+  overflow-y: scroll;
+}

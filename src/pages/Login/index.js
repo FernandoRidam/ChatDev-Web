@@ -4,12 +4,12 @@ import './styles.css';
 
 import {
   logo,
-  github,
   info,
 } from '../../assets';
 
 import {
-  TextField
+  TextField,
+  GitHubButton,
 } from '../../components';
 
 import {
@@ -63,11 +63,7 @@ export default function Login({ history }) {
           </button>
         </div>
 
-        <div className="github">
-          <span className="text-github">Contribua com o projeto</span>
-
-          <img src={ github } className="img-github" alt="GitHub"/>
-        </div>
+        <GitHubButton />
       </div>
     </div>
   );

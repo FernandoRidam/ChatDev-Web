@@ -16,6 +16,7 @@ body {
   justify-content: center;
   background-color: #2C2C2C;
   height: 100vh;
+  overflow: hidden;
 }
 
 .content {
@@ -122,30 +123,11 @@ body {
   background-color: rgba(37, 162, 208, 0.75);
 }
 
-.github {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 180px;
-  margin-top: 65px;
-  cursor: pointer;
-
-  transition: all 0.2s;
+::-webkit-scrollbar {
+  width: 5px;
 }
 
-.github:active {
-  opacity: .8;
-}
-
-.text-github {
-  font-size: 13px;
-  font-weight: 500;
-  font-style: italic;
-  color: #25A1D0;
-}
-
-.img-github {
-  width: 20px;
-  height: 19px;
+::-webkit-scrollbar-thumb {
+  background: #25A1D0;
+  border-radius: 5px;
 }

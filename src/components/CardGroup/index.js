@@ -6,9 +6,9 @@ import {
 
 import './styles.css';
 
-export function CardGroup({ title, subject }) {
+export function CardGroup({ title, subject, onClick }) {
   return (
-    <div className="card-container">
+    <div className="card-container" onClick={ onClick }>
       <div className="information">
         <span className="title">{ title }</span>
 

@@ -6,11 +6,11 @@ import {
   logo,
   github,
   info,
-  arrow_left,
+  arrowLeft,
 } from '../../assets';
 
 import {
-  TextField
+  TextField, GitHubButton
 } from '../../components';
 
 import {
@@ -28,7 +28,7 @@ export default function FinishRegister({ history}) {
         <div className="header-card">
           <img
             onClick={() => handleNavigation('/register')}
-            src={ arrow_left }
+            src={ arrowLeft }
             className="arrow-left"
             alt="Arrow Left"
           />
@@ -81,11 +81,7 @@ export default function FinishRegister({ history}) {
           <div />
         </div>
 
-        <div className="github gh-max">
-          <span className="text-github">Contribua com o projeto</span>
-
-          <img src={ github } className="img-github" alt="GitHub"/>
-        </div>
+        <GitHubButton />
       </div>
     </div>
   );
