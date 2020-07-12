@@ -1,0 +1,27 @@
+.github {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 180px;
+  margin-top: 65px;
+  cursor: pointer;
+
+  transition: all 0.2s;
+}
+
+.github:active {
+  opacity: .8;
+}
+
+.text-github {
+  font-size: 13px;
+  font-weight: 500;
+  font-style: italic;
+  color: #25A1D0;
+}
+
+.img-github {
+  width: 20px;
+  height: 19px;
+}

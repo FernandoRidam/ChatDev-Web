@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="155" height="155" viewBox="0 0 155 155">
+  <g id="Profile_Icon" data-name="Profile Icon" transform="translate(-1640 -132)">
+    <circle id="Elipse_5" data-name="Elipse 5" cx="77.5" cy="77.5" r="77.5" transform="translate(1640 132)" fill="#474747"/>
+    <path id="account" d="M51.5,4A23.75,23.75,0,1,1,27.75,27.75,23.75,23.75,0,0,1,51.5,4m0,59.375C77.744,63.375,99,74,99,87.125V99H4V87.125C4,74,25.256,63.375,51.5,63.375Z" transform="translate(1666 158)" fill="#2c2c2c"/>
+  </g>
+</svg>
