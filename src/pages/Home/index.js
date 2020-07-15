@@ -12,10 +12,20 @@ import {
 import {
   FloatingButton
 } from '../../components';
+import {
+  index,
+} from '../../services';
+import { alertShow } from '../../utils/alert';
 
 export default function Home({ history }) {
+  const [ groups, setGroups ] = useState([]);
+
   const [ group, setGroup ] = useState(null);
   const [ profile, setProfile ] = useState(null);
+
+  function handleNavigation( route ) {
+    history.push( route );
+  };
 
   function handleOpenChat( group ) {
     setGroup( group );
@@ -34,6 +44,24 @@ export default function Home({ history }) {
   function handleCloseProfile() {
     setProfile(null);
   };
+
+  async function getGroups() {
+    const { success, message, groups } = await index();
+
+    if( success ) {
+      setGroups( groups );
+    } else {
+      alertShow( success, message );
+
+      if( message === 'Token expirado!') {
+        handleNavigation('/');
+      };
+    }
+  };
+
+  useEffect(() => {
+    getGroups();
+  }, []);
 
   return (
     <div className="container-home">
@@ -55,6 +83,7 @@ export default function Home({ history }) {
           !profile
             ? <ListGroups
                 handleOpenChat={ handleOpenChat }
+                groups={ groups }
               />
             : <Profile
                 handleCloseProfile={ handleCloseProfile }

@@ -33,7 +33,6 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 10px;
 }
 
 .card {
@@ -102,25 +101,6 @@ body {
   justify-content: space-between;
   width: 595px;
   margin-top: 75px;
-}
-
-.button {
-  width: 260px;
-  height: 55px;
-  border: 0;
-  border-radius: 8px;
-  background-color: #25A1D0;
-  color: #FFF;
-  font-size: 22px;
-  font-weight: 500;
-  font-style: italic;
-  cursor: pointer;
-
-  transition: all 0.2s;
-}
-
-.button:active {
-  background-color: rgba(37, 162, 208, 0.75);
 }
 
 ::-webkit-scrollbar {

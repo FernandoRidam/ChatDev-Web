@@ -18,7 +18,7 @@ import {
   searchGroup,
 } from '../../../utils/iconsFunctions';
 
-export function ListGroups({ handleOpenChat }) {
+export function ListGroups({ handleOpenChat, groups }) {
   return(
     <div className="list-groups">
       <div className="header">
@@ -40,18 +40,19 @@ export function ListGroups({ handleOpenChat }) {
 
         <Separator text="Tópicos" />
 
-        <CardGroup
-          title="NodeJs - Clicável"
-          subject="Assunto..."
-          onClick={handleOpenChat}
-          // onClick={() => handleOpenChat( group )} => in map
-        />
+        {
+          groups.length > 0
+            ? groups.map( group =>
+              <CardGroup
+                title={ group.name }
+                subject={ group.subject }
+                onClick={() => handleOpenChat( group )}
+              />)
 
-        <CardGroup title="NodeJs" subject="Assunto..."/>
-
-        <CardGroup title="NodeJs" subject="Assunto..."/>
-
-        <CardGroup title="NodeJs" subject="Assunto..."/>
+            : <div className="empty">
+                <span className="empty-text">Nenhum Grupo...</span>
+              </div>
+        }
       </div>
     </div>
   );

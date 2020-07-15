@@ -1,0 +1,17 @@
+<svg id="warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
+  <g id="Grupo_6" data-name="Grupo 6">
+    <g id="Grupo_5" data-name="Grupo 5">
+      <path id="Caminho_14" data-name="Caminho 14" d="M17.5,0A17.5,17.5,0,1,0,35,17.5,17.49,17.49,0,0,0,17.5,0Zm0,32.266A14.766,14.766,0,1,1,32.266,17.5,14.757,14.757,0,0,1,17.5,32.266Z" fill="#fff"/>
+    </g>
+  </g>
+  <g id="Grupo_8" data-name="Grupo 8" transform="translate(16.133 8.81)">
+    <g id="Grupo_7" data-name="Grupo 7">
+      <path id="Caminho_15" data-name="Caminho 15" d="M237.367,128.877A1.367,1.367,0,0,0,236,130.244v8.8a1.367,1.367,0,0,0,2.734,0v-8.8A1.367,1.367,0,0,0,237.367,128.877Z" transform="translate(-236 -128.877)" fill="#fff"/>
+    </g>
+  </g>
+  <g id="Grupo_10" data-name="Grupo 10" transform="translate(15.654 22.023)">
+    <g id="Grupo_9" data-name="Grupo 9">
+      <circle id="Elipse_14" data-name="Elipse 14" cx="1.846" cy="1.846" r="1.846" fill="#fff"/>
+    </g>
+  </g>
+</svg>

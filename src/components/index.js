@@ -5,3 +5,5 @@ export * from './TextField';
 export * from './Loading';
 export * from './Message';
 export * from './GitHubButton';
+export * from './Alert';
+export * from './Button';

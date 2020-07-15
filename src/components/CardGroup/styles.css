@@ -45,12 +45,12 @@
 }
 
 .title {
-  font-size: 20px;
+  font-size: 18px;
   color: #DBDBDB;
 }
 
 .subject {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 300;
   color: #DBDBDB;
 }
@@ -58,7 +58,7 @@
 .subject-line {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: flex-end;
 }
 
 .subject-image {

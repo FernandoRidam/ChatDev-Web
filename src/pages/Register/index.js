@@ -1,25 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './styles.css';
 
 import {
   logo,
-  github,
   info,
   arrowLeft,
 } from '../../assets';
 
 import {
-  TextField, GitHubButton
+  TextField,
+  GitHubButton,
+  Button,
 } from '../../components';
 
 import {
   handlePopUpShow,
 } from '../../utils/iconsFunctions';
 
+import {
+  store,
+} from '../../services';
+
+import {
+  invalidValueField,
+  validValueField,
+} from '../../utils/validationField';
+
+import {
+  alertShow
+} from '../../utils/alert';
+
 export default function Register({ history }) {
+  const [ email, setEmail ] = useState('');
+  const [ username, setUsername ] = useState('');
+
+  const [ loading, setLoading ] = useState(false);
+
   function handleNavigation( route ) {
     history.push( route );
+  };
+
+  async function handleRegister() {
+    if( email === '' || username === '') {
+      if( email === '') {
+        invalidValueField('Email');
+      }
+
+      if( username === '') {
+        invalidValueField('Usuário GitHub');
+      }
+
+      alertShow( false, 'Preencha corretamente os campos!');
+    } else {
+      setLoading( true );
+
+      const { success, message } = await store( email, username );
+
+      alertShow( success, message );
+
+      if( success ) {
+        handleNavigation('/finish-register');
+      }
+
+      setLoading( false );
+    }
   };
 
   return (
@@ -44,6 +89,9 @@ export default function Register({ history }) {
             icon={ info }
             popupText="Seu email para cadastro"
             iconFunction={ handlePopUpShow }
+            value={ email }
+            onChange={ event => setEmail( event.target.value )}
+            onFocus={() => validValueField('Email')}
           />
 
           <TextField
@@ -51,18 +99,20 @@ export default function Register({ history }) {
             icon={ info }
             popupText="Seu usuário GitHub!"
             iconFunction={ handlePopUpShow }
+            value={ username }
+            onChange={ event => setUsername( event.target.value )}
+            onFocus={() => validValueField('Usuário GitHub')}
           />
         </div>
 
         <div className="buttons-view">
           <div />
 
-          <button
-            onClick={() => handleNavigation('/finish-register')}
-            className="button"
-          >
-            CONTINUAR
-          </button>
+          <Button
+            onClick={handleRegister}
+            text="CONTINUAR"
+            loading={ loading }
+          />
 
           <div />
         </div>

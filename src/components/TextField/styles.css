@@ -10,6 +10,22 @@
   border-radius: 8px;
   color: #FFF;
   padding: 15px;
+  box-shadow: 0 0 0 0 transparent;
+
+  transition: all .4s;
+}
+
+.text-field-focus {
+  box-shadow: 0 0 0 3px rgb(37, 161, 208, .2);
+
+  transition: all .4s;
+}
+
+.text-field-invalid {
+  border: 1px solid #ff2a2a;
+  box-shadow: 0 0 0 3px rgb(255, 42, 42, .2);
+
+  transition: all .4s;
 }
 
 .text-field .input-text {

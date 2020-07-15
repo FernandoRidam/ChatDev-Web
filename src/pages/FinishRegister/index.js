@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './styles.css';
 
@@ -10,16 +10,65 @@ import {
 } from '../../assets';
 
 import {
-  TextField, GitHubButton
+  TextField, GitHubButton, Button
 } from '../../components';
 
 import {
   handlePopUpShow,
 } from '../../utils/iconsFunctions';
 
+import {
+  invalidValueField,
+  validValueField,
+} from '../../utils/validationField';
+
+import {
+  alertShow
+} from '../../utils/alert';
+
+import {
+  verifyCode,
+} from '../../services';
+
 export default function FinishRegister({ history}) {
+  const [ code, setCode ] = useState('');
+  const [ password, setPassword ] = useState('');
+  const [ confirmPassword, setConfirmPassword ] = useState('');
+
+  const [ loading, setLoading ] = useState(false);
+
   function handleNavigation( route ) {
     history.push( route );
+  };
+
+  async function handleSubmit() {
+    if( code === '' || password === '' || confirmPassword === '') {
+      if( code === '') {
+        invalidValueField('Código de Verificação');
+      }
+
+      if( password === '') {
+        invalidValueField('Senha');
+      }
+
+      if( confirmPassword === '') {
+        invalidValueField('Confirmar senha');
+      }
+
+      alertShow( false, 'Preencha corretamente os campos!');
+    } else {
+      setLoading( true );
+
+      const { success, message } = await verifyCode( code, password, confirmPassword );
+
+      alertShow( success, message );
+
+      if( success ) {
+        handleNavigation('/home');
+      }
+
+      setLoading( false );
+    }
   };
 
   return (
@@ -45,6 +94,9 @@ export default function FinishRegister({ history}) {
               icon={ info }
               popupText="Enviado para seu email!"
               iconFunction={ handlePopUpShow }
+              onFocus={() => validValueField('Código de Verificação')}
+              value={ code }
+              onChange={ event => setCode( event.target.value )}
             />
 
             <span className="hint-input">Verifique sua caixa de email</span>
@@ -56,6 +108,9 @@ export default function FinishRegister({ history}) {
             icon={ info }
             popupText="Sua senha de acesso!"
             iconFunction={ handlePopUpShow }
+            onFocus={() => validValueField('Senha')}
+            value={ password }
+            onChange={ event => setPassword( event.target.value )}
             type="password"
           />
 
@@ -64,6 +119,9 @@ export default function FinishRegister({ history}) {
             icon={ info }
             popupText="Confirme sua senha!"
             iconFunction={ handlePopUpShow }
+            onFocus={() => validValueField('Confirmar senha')}
+            value={ confirmPassword }
+            onChange={ event => setConfirmPassword( event.target.value )}
             type="password"
           />
         </div>
@@ -71,12 +129,11 @@ export default function FinishRegister({ history}) {
         <div className="buttons-view bt-max">
           <div />
 
-          <button
-            onClick={() => handleNavigation('/home')}
-            className="button"
-          >
-            ENTRAR
-          </button>
+          <Button
+            onClick={handleSubmit}
+            text="ENTRAR"
+            loading={ loading }
+          />
 
           <div />
         </div>

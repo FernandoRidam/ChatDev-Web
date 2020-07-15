@@ -12,6 +12,8 @@ const loadingWhiteLg = require('./blue-lg-white.svg');
 const loadingWhiteMd = require('./blue-md-white.svg');
 const profile = require('./profile.svg');
 const email = require('./email.svg');
+const success = require('./success.svg');
+const warning = require('./warning.svg');
 
 module.exports = {
   arrowLeft,
@@ -28,4 +30,6 @@ module.exports = {
   loadingWhiteMd,
   profile,
   email,
+  success,
+  warning,
 }
