@@ -41,3 +41,17 @@
   padding-bottom: 15px;
   overflow-y: scroll;
 }
+
+.empty {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-text {
+  font-size: 18px;
+  font-weight: 300;
+  color: #25A1D0;
+}
