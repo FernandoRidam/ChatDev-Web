@@ -1,41 +1,46 @@
 import React from 'react';
 
+import moment from 'moment';
+
 import './styles.css';
 
-export function Message({ id, handleOpenProfile }) {
+export function Message({ message, handleOpenProfile }) {
+  moment.locale('pt-br');
+
+  const logedUser = localStorage.getItem('ChatDev@UserId');
+  const hour = moment( message.createdAt ).format('LT');
+
   return (
-    <>
-      <div className="member-message">
-        <div className="balloon member-balloon">
-          <div className="member-name" onClick={() => handleOpenProfile( id )}>
-            <span className="name">João</span>
-          </div>
+    message.user_id._id !== logedUser
+      ? <div className="member-message">
+          <div className="balloon member-balloon">
+            <div className="member-name" onClick={() => handleOpenProfile( message.user_id._id )}>
+              <span className="name">{ message.user_id.name }</span>
+            </div>
 
-          <div className="message">
-            <span className="message-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-          </div>
+            <div className="message">
+              <span className="message-text">{ message.text }</span>
+            </div>
 
-          <div className="info">
-            <span className="info-text">14:42</span>
+            <div className="info">
+              <span className="info-text">{ hour }</span>
+            </div>
           </div>
         </div>
-      </div>
+      : <div className="your-message">
+          <div className="balloon your-balloon">
+            <div className="member-name" onClick={() => handleOpenProfile( message.user_id._id )}>
+              <span className="name">Você</span>
+            </div>
 
-      <div className="your-message">
-        <div className="balloon your-balloon">
-          <div className="member-name" onClick={() => handleOpenProfile( id )}>
-            <span className="name">Você</span>
-          </div>
+            <div className="message">
+              <span className="message-text">{ message.text }</span>
+            </div>
 
-          <div className="message">
-            <span className="message-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-          </div>
-
-          <div className="info">
-            <span className="info-text">14:42</span>
+            <div className="info">
+              <span className="info-text">{ hour }</span>
+            </div>
           </div>
         </div>
-      </div>
-    </>
   );
 };

@@ -12,10 +12,12 @@ export function TextField( props ) {
     value,
     onChange,
     onFocus,
+    height = 55,
+    width = '100%',
   } = props;
 
   return(
-    <div id={ `field-${ placeholder }`} className="text-field">
+    <div id={ `field-${ placeholder }`} className="text-field" style={{ height, width }}>
       <input
         placeholder={ placeholder }
         className="input-text"

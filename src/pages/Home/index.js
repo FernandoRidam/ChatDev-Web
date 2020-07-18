@@ -10,15 +10,23 @@ import {
 } from '../SubPages';
 
 import {
-  FloatingButton
+  FloatingButton, Loading
 } from '../../components';
+
 import {
   index,
+  getProfile,
 } from '../../services';
-import { alertShow } from '../../utils/alert';
+
+import {
+  alertShow,
+} from '../../utils/alert';
 
 export default function Home({ history }) {
-  const [ groups, setGroups ] = useState([]);
+  const [ interactingGroups, setInteractingGroups ] = useState([]);
+  const [ groupsNotInteracting, setGroupsNotInteracting ] = useState([]);
+
+  const [ loading, setLoading ] = useState(false);
 
   const [ group, setGroup ] = useState(null);
   const [ profile, setProfile ] = useState(null);
@@ -27,18 +35,26 @@ export default function Home({ history }) {
     history.push( route );
   };
 
-  function handleOpenChat( group ) {
-    setGroup( group );
+  function handleOpenChat( selectedGroup ) {
+    if( group ) {
+      handleCloseChat();
+    }
+
+    setGroup( selectedGroup );
   };
 
   function handleCloseChat() {
     setGroup(null);
   };
 
-  function handleOpenProfile( id ) {
-    // Get Profile data...
+  async function handleOpenProfile( id ) {
+    const { success, message, profile: profileData } = await getProfile( id );
 
-    setProfile({});
+    if( success ) {
+      setProfile( profileData );
+    } else {
+      alertShow( success, message );
+    }
   };
 
   function handleCloseProfile() {
@@ -46,10 +62,13 @@ export default function Home({ history }) {
   };
 
   async function getGroups() {
-    const { success, message, groups } = await index();
+    setLoading( true );
+
+    const { success, message, groupsNotInteracting, interactingGroups } = await index();
 
     if( success ) {
-      setGroups( groups );
+      setInteractingGroups( interactingGroups );
+      setGroupsNotInteracting( groupsNotInteracting );
     } else {
       alertShow( success, message );
 
@@ -57,6 +76,8 @@ export default function Home({ history }) {
         handleNavigation('/');
       };
     }
+
+    setLoading( false );
   };
 
   useEffect(() => {
@@ -73,7 +94,6 @@ export default function Home({ history }) {
                 handleCloseChat={ handleCloseChat }
                 handleOpenProfile={ handleOpenProfile }
                 group={ group }
-
               />
         }
       </div>
@@ -82,11 +102,16 @@ export default function Home({ history }) {
         {
           !profile
             ? <ListGroups
+                handleNavigation={ handleNavigation }
+                handleOpenProfile={ handleOpenProfile }
                 handleOpenChat={ handleOpenChat }
-                groups={ groups }
+                interactingGroups={ interactingGroups }
+                groupsNotInteracting={ groupsNotInteracting }
+                loading={ loading }
               />
             : <Profile
                 handleCloseProfile={ handleCloseProfile }
+                profile={ profile }
               />
         }
       </div>

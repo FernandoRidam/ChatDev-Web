@@ -1,6 +1,7 @@
 .balloon {
   padding: 5px;
   max-width: 55%;
+  min-width: 35%;
 }
 
 .member-message {

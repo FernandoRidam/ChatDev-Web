@@ -37,11 +37,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  width: 90%;
 }
 
 .profile-avatar {
-  width: 125px;
-  height: 125px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #25A1D0;
 }
 
 .profile-name {
@@ -78,6 +81,7 @@
   border: 1px solid #25A1D0;
   border-radius: 8px;
   cursor: pointer;
+  text-decoration: none;
 
   transition: all .2s;
 }
