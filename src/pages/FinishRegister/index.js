@@ -28,6 +28,7 @@ import {
 
 import {
   verifyCode,
+  login,
 } from '../../services';
 
 export default function FinishRegister({ history}) {
@@ -61,13 +62,27 @@ export default function FinishRegister({ history}) {
 
       const { success, message } = await verifyCode( code, password, confirmPassword );
 
-      alertShow( success, message );
-
       if( success ) {
-        handleNavigation('/home');
+        efetuarLogin();
       }
 
+      alertShow( success, message );
+
       setLoading( false );
+    }
+  };
+
+  async function efetuarLogin() {
+    const username = localStorage.getItem('ChatDev@username');
+
+    const { success, message } = await login( username, password );
+
+    if( success ) {
+      handleNavigation('/home');
+
+      localStorage.removeItem('ChatDev@username');
+    } else {
+      alertShow( success, message );
     }
   };
 
