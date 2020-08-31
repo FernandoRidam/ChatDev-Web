@@ -122,7 +122,7 @@ export function Chat({ handleCloseChat, handleOpenProfile, group }) {
     });
 
     socket.on('message', newMessage => {
-      if( newMessage.group_id === group._id ) {
+      if( newMessage.group_id === group._id && newMessage.user_id._id !== logged_id ) {
         setMessagesFeed( newMessage );
       }
     });
