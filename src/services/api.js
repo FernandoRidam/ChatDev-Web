@@ -1,8 +1,7 @@
 import axios from 'axios';
-import 'dotenv';
 
 export const api = axios.create({
-  baseURL: 'http://localhost:3333',
+  baseURL: process.env.REACT_APP_API_URL,
 });
 
 export function saveTokenId( token, user_id ) {
