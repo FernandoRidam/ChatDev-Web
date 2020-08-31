@@ -7,3 +7,4 @@ export * from './Message';
 export * from './GitHubButton';
 export * from './Alert';
 export * from './Button';
+export * from './ModalGroup';

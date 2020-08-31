@@ -6,9 +6,9 @@ import {
 
 import './styles.css';
 
-export function FloatingButton() {
+export function FloatingButton({ onClick }) {
   return (
-    <div className="floating-button">
+    <div onClick={ onClick } className="floating-button">
       <img className="image-plus" src={ plus } alt="Adicionar" />
     </div>
   );

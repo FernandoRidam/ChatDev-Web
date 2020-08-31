@@ -24,7 +24,7 @@ import {
   openMenu,
 } from '../../../utils/menu';
 
-export function ListGroups({ handleNavigation, handleOpenChat, handleOpenProfile, interactingGroups, groupsNotInteracting, loading }) {
+export function ListGroups({ handleNavigation, handleOpenChat, handleOpenProfile, interactingGroups, groupsNotInteracting, loading, getGroups, deletingGroup, updatingGroup }) {
   const [ openMenuIcon, setOpenMenuIcon ] = useState(false);
 
   async function openProfile() {
@@ -100,9 +100,11 @@ export function ListGroups({ handleNavigation, handleOpenChat, handleOpenProfile
                     ? interactingGroups.map( group =>
                       <CardGroup
                         key={ group._id }
-                        title={ group.name }
-                        subject={ group.subject }
+                        group={ group }
+                        getGroups={ getGroups }
                         onClick={() => handleOpenChat( group )}
+                        deletingGroup={ deletingGroup }
+                        updatingGroup={ updatingGroup }
                       />)
 
                     : <div className="empty">
@@ -116,9 +118,8 @@ export function ListGroups({ handleNavigation, handleOpenChat, handleOpenProfile
                     ? groupsNotInteracting.map( group =>
                       <CardGroup
                         key={ group._id }
-                        title={ group.name }
-                        subject={ group.subject }
-                        onClick={() => handleOpenChat( group )}
+                        group={ group }
+                        getGroups={ getGroups }
                       />)
 
                     : <div className="empty">

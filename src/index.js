@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom';
 import './styles.css';
 import App from './App';
 
-import 'dotenv';
-
 ReactDOM.render(
   <React.StrictMode>
     <App />

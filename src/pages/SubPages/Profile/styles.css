@@ -20,6 +20,7 @@
   width: 30px;
   height: 20px;
   cursor: pointer;
+  -webkit-user-drag: none;
 }
 
 .arrow-left-profile:active {
@@ -45,6 +46,7 @@
   height: 150px;
   border-radius: 50%;
   border: 2px solid #25A1D0;
+  -webkit-user-drag: none;
 }
 
 .profile-name {
@@ -99,6 +101,7 @@
 .button-icon {
   width: 25px;
   height: 25px;
+  -webkit-user-drag: none;
 }
 
 .profile-footer {

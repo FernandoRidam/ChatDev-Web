@@ -8,6 +8,7 @@
   font-weight: 300;
   color: #25A1D0;
   font-style: italic;
+  user-select: none;
 }
 
 .input-view-max {

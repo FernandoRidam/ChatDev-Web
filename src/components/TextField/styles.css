@@ -44,6 +44,7 @@
   cursor: pointer;
 
   transition: all .2s;
+  -webkit-user-drag: none;
 }
 
 .text-field-icon:active {

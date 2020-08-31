@@ -1,11 +1,13 @@
 .loading-lg {
   position: absolute;
   transform: rotate(-30deg);
+  -webkit-user-drag: none;
 }
 
 .loading-md {
   position: absolute;
   transform: rotate(30deg);
+  -webkit-user-drag: none;
 }
 
 @keyframes rotatingClockwise {

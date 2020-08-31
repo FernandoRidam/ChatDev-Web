@@ -10,7 +10,7 @@ import {
 } from '../SubPages';
 
 import {
-  FloatingButton, Loading
+  FloatingButton, ModalGroup,
 } from '../../components';
 
 import {
@@ -21,10 +21,16 @@ import {
 import {
   alertShow,
 } from '../../utils/alert';
+import { ModalDeleteGroup } from '../../components/ModalDeleteGroup';
 
 export default function Home({ history }) {
   const [ interactingGroups, setInteractingGroups ] = useState([]);
   const [ groupsNotInteracting, setGroupsNotInteracting ] = useState([]);
+
+  const [ openModalSaveEdit, setOpenModalSaveEdit ] = useState(false);
+  const [ openModalDelete, setOpenModalDelete ] = useState(false);
+
+  const [ selectedGroup, setSelectedGroup ] = useState(null);
 
   const [ loading, setLoading ] = useState(false);
 
@@ -59,6 +65,26 @@ export default function Home({ history }) {
 
   function handleCloseProfile() {
     setProfile(null);
+  };
+
+  function deletingGroup( selectedGroup ) {
+    setSelectedGroup( selectedGroup );
+
+    if( group?._id === selectedGroup._id ) {
+      setGroup(null);
+    }
+
+    setOpenModalDelete( true );
+  };
+
+  function updatingGroup( selectedGroup ) {
+    setSelectedGroup( selectedGroup );
+
+    if( group?._id === selectedGroup._id ) {
+      setGroup(null);
+    }
+
+    setOpenModalSaveEdit( true );
   };
 
   async function getGroups() {
@@ -108,6 +134,9 @@ export default function Home({ history }) {
                 interactingGroups={ interactingGroups }
                 groupsNotInteracting={ groupsNotInteracting }
                 loading={ loading }
+                getGroups={ getGroups }
+                deletingGroup={ deletingGroup }
+                updatingGroup={ updatingGroup }
               />
             : <Profile
                 handleCloseProfile={ handleCloseProfile }
@@ -116,7 +145,33 @@ export default function Home({ history }) {
         }
       </div>
 
-      <FloatingButton />
+      <FloatingButton onClick={() => setOpenModalSaveEdit( true )}/>
+
+      {
+        openModalSaveEdit
+          ? <ModalGroup
+              getGroups={ getGroups }
+              closeModal={() => {
+                setOpenModalSaveEdit( false );
+                setSelectedGroup(null);
+              }}
+              selectedGroup={ selectedGroup }
+            />
+          : <></>
+      }
+
+      {
+        openModalDelete
+          ? <ModalDeleteGroup
+              getGroups={ getGroups }
+              closeModal={() => {
+                setOpenModalDelete( false );
+                setSelectedGroup(null);
+              }}
+              group={ selectedGroup }
+            />
+          : <></>
+      }
     </div>
     );
   };

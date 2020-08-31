@@ -99,3 +99,19 @@
   font-size: 14px;
   color: #25A1D0;
 }
+
+.date-chat {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 5px;
+}
+
+.date {
+  border-radius: 8px;
+  padding: 5px;
+  background-color: rgba(100, 100, 100, 0.4);
+  color: #DBDBDB;
+}

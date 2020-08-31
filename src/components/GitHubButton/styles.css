@@ -24,4 +24,5 @@
 .img-github {
   width: 20px;
   height: 19px;
+  -webkit-user-drag: none;
 }

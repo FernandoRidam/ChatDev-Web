@@ -35,6 +35,7 @@
   display: none;
   width: 20px;
   height: 20px;
+  -webkit-user-drag: none;
 }
 
 .alert-icon-active {
