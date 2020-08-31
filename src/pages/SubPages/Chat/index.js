@@ -117,7 +117,7 @@ export function Chat({ handleCloseChat, handleOpenProfile, group }) {
   useEffect(() => {
     const logged_id = localStorage.getItem('ChatDev@UserId');
 
-    const socket = io('http://localhost:3333', {
+    const socket = io( process.env.REACT_APP_API_URL, {
       query: { user: logged_id }
     });
 
