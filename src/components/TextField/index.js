@@ -11,17 +11,27 @@ export function TextField( props ) {
     iconFunction,
     value,
     onChange,
+    enterKeyPress = () => {},
     onFocus,
+    height = 55,
+    width = '100%',
   } = props;
 
+  function handleEnterKeyPress( event ) {
+    if ( event.keyCode == 13) {
+      enterKeyPress();
+    }
+  };
+
   return(
-    <div id={ `field-${ placeholder }`} className="text-field">
+    <div id={ `field-${ placeholder }`} className="text-field" style={{ height, width }}>
       <input
         placeholder={ placeholder }
         className="input-text"
         type={ type || 'text'}
         value={ value }
         onChange={ onChange }
+        onKeyUp={ handleEnterKeyPress }
         onFocus={ onFocus }
       />
 

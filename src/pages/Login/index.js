@@ -99,6 +99,7 @@ export default function Login({ history }) {
             onFocus={() => validValueField('Senha')}
             value={ password }
             onChange={ event => setPassword( event.target.value )}
+            enterKeyPress={ handleSubmit }
           />
         </div>
 

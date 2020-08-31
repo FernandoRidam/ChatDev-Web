@@ -1,6 +1,6 @@
 import {
   api,
-  setToken,
+  saveTokenId,
 } from './api';
 
 export async function store( email, username ) {
@@ -44,10 +44,20 @@ export async function login( username, password ) {
     });
 
     if( data.success ) {
-      setToken( data.token );
+      saveTokenId( data.token, data.user_id );
     }
 
     return { success: data.success, message: data.message };
+  } catch {
+    return { success: false, message: 'Falha ao se comunicar com o servidor!'};
+  }
+};
+
+export async function getProfile( profile_id ) {
+  try {
+    const { data } = await api.get(`/users/${ profile_id }`);
+
+    return { success: data.success, message: data.message, profile: data.profile };
   } catch {
     return { success: false, message: 'Falha ao se comunicar com o servidor!'};
   }

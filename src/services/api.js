@@ -5,8 +5,9 @@ export const api = axios.create({
   baseURL: 'http://localhost:3333',
 });
 
-export function setToken( token ) {
+export function saveTokenId( token, user_id ) {
   localStorage.setItem('ChatDev@token', token );
+  localStorage.setItem('ChatDev@UserId', user_id );
 
   api.defaults.headers.common['Authorization'] = `Bearer ${ token }`;
 };
