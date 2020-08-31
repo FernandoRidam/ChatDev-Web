@@ -57,6 +57,8 @@ export default function Register({ history }) {
 
       const { success, message } = await store( email, username );
 
+      localStorage.setItem('ChatDev@username', username );
+
       alertShow( success, message );
 
       if( success ) {
