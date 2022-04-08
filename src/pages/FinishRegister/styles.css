@@ -15,7 +15,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 79px;
+  width: 100%;
+  height: 80px;
 }
 
 .bt-max {

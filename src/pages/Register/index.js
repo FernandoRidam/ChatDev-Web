@@ -73,16 +73,20 @@ export default function Register({ history }) {
     <div className="container">
       <div className="card">
         <div className="header-card">
-          <img
-            onClick={() => handleNavigation('/')}
-            src={ arrowLeft }
-            className="arrow-left"
-            alt="Arrow Left"
-          />
+          <div className="header-actions">
+            <img
+              onClick={() => handleNavigation('/')}
+              src={ arrowLeft }
+              className="arrow-left"
+              alt="Arrow Left"
+            />
+          </div>
 
-          <img src={ logo } className="logo" alt="CHATDEV"/>
+          <div className="header-title">
+            <img src={ logo } className="logo" alt="CHATDEV"/>
 
-          <span className="sub-logo">Entre Para a Comunidade!</span>
+            <span className="sub-logo">Entre Para a Comunidade!</span>
+          </div>
         </div>
 
         <div className="inputs-view">

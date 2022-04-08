@@ -90,16 +90,20 @@ export default function FinishRegister({ history}) {
     <div className="container">
       <div className="card">
         <div className="header-card">
-          <img
-            onClick={() => handleNavigation('/register')}
-            src={ arrowLeft }
-            className="arrow-left"
-            alt="Arrow Left"
-          />
+          <div className="header-actions">
+            <img
+              onClick={() => handleNavigation('/register')}
+              src={ arrowLeft }
+              className="arrow-left"
+              alt="Arrow Left"
+            />
+          </div>
 
-          <img src={ logo } className="logo" alt="CHATDEV"/>
+          <div className="header-title">
+            <img src={ logo } className="logo" alt="CHATDEV"/>
 
-          <span className="sub-logo">Finalize Seu Cadastro!</span>
+            <span className="sub-logo">Finalize Seu Cadastro!</span>
+          </div>
         </div>
 
         <div className="inputs-view max-height">

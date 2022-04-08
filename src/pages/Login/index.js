@@ -74,9 +74,11 @@ export default function Login({ history }) {
     <div className="container">
       <div className="card">
         <div className="header-card">
-          <img src={ logo } className="logo" alt="CHATDEV"/>
+          <div className="header-title">
+            <img src={ logo } className="logo" alt="CHATDEV"/>
 
-          <span className="sub-logo">Vamos nessa!</span>
+            <span className="sub-logo">Vamos nessa!</span>
+          </div>
         </div>
 
         <div className="inputs-view">

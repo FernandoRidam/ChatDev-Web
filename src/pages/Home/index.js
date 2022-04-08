@@ -111,7 +111,7 @@ export default function Home({ history }) {
   }, []);
 
   return (
-    <div className="container-home">
+    <div className="container">
       <div className="main">
         {
           !group
