@@ -22,8 +22,11 @@ import {
   alertShow,
 } from '../../utils/alert';
 import { ModalDeleteGroup } from '../../components/ModalDeleteGroup';
+import { useNavigate } from 'react-router';
 
-export default function Home({ history }) {
+export default function Home() {
+  const navigate = useNavigate();
+
   const [ interactingGroups, setInteractingGroups ] = useState([]);
   const [ groupsNotInteracting, setGroupsNotInteracting ] = useState([]);
 
@@ -38,7 +41,7 @@ export default function Home({ history }) {
   const [ profile, setProfile ] = useState(null);
 
   function handleNavigation( route ) {
-    history.push( route );
+    navigate( route );
   };
 
   function handleOpenChat( selectedGroup ) {

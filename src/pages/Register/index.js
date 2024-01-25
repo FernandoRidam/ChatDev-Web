@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 
 import './styles.css';
 
-import {
-  logo,
-  info,
-  arrowLeft,
-} from '../../assets';
+import logo from '../../assets/logo.png';
+import info from '../../assets/info.svg';
+import arrowLeft from '../../assets/arrow_left.svg';
 
 import {
   TextField,
@@ -30,15 +28,18 @@ import {
 import {
   alertShow
 } from '../../utils/alert';
+import { useNavigate } from 'react-router';
 
-export default function Register({ history }) {
+export default function Register() {
+  const navigate = useNavigate();
+
   const [ email, setEmail ] = useState('');
   const [ username, setUsername ] = useState('');
 
   const [ loading, setLoading ] = useState(false);
 
   function handleNavigation( route ) {
-    history.push( route );
+    navigate( route );
   };
 
   async function handleRegister() {

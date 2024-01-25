@@ -1,14 +1,16 @@
 import React from 'react';
 
-import moment from 'moment';
+import {
+  format,
+} from 'date-fns';
 
 import './styles.css';
 
 export function Message({ message, handleOpenProfile }) {
   const logedUser = localStorage.getItem('ChatDev@UserId');
 
-  const date = moment( message.createdAt).format('L');
-  const hour = moment( message.createdAt ).format('LT');
+  const date = format( message.createdAt, 'L');
+  const hour = format( message.createdAt, 'LT');
 
   return (
     <>

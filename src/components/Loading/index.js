@@ -2,13 +2,6 @@ import React from 'react';
 
 import './styles.css';
 
-import {
-  loadingLg,
-  loadingMd,
-  loadingWhiteLg,
-  loadingWhiteMd,
-} from '../../assets';
-
 export function Loading( props ) {
   const {
     size = 45,

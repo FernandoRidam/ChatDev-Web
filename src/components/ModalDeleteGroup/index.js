@@ -6,9 +6,7 @@ import {
   Loading,
 } from '../../components';
 
-import {
-  closeWhite,
-} from '../../assets';
+import closeWhite from '../../assets/close-white.svg';
 
 import {
   alertShow,

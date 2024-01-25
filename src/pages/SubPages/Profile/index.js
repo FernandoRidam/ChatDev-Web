@@ -6,12 +6,10 @@ import {
   GitHubButton,
 } from '../../../components';
 
-import {
-  profileImg,
-  github,
-  email,
-  arrowLeft,
-} from '../../../assets';
+import profileImg from '../../../assets/profile.svg';
+import github from '../../../assets/github.svg';
+import email from '../../../assets/email.svg';
+import arrowLeft from '../../../assets/arrow_left.svg';
 
 export function Profile({ handleCloseProfile, profile }) {
   function handleClickButton( link ) {

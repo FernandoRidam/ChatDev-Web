@@ -1,8 +1,6 @@
 import React from 'react';
 
-import {
-  github,
-} from '../../assets';
+import github from '../../assets/github.svg';
 
 import './styles.css';
 

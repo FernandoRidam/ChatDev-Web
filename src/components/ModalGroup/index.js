@@ -7,10 +7,8 @@ import {
   Loading,
 } from '../../components';
 
-import {
-  closeWhite,
-  info,
-} from '../../assets';
+import closeWhite from '../../assets/close-white.svg';
+import info from '../../assets/info.svg';
 
 import {
   handlePopUpShow,

@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 
 import './styles.css';
 
-import {
-  logo,
-  info,
-} from '../../assets';
+import logo from '../../assets/logo.png';
+import info from '../../assets/info.svg';
 
 import {
   TextField,
@@ -29,15 +27,17 @@ import {
 import {
   login,
 } from '../../services';
+import { useNavigate } from 'react-router';
 
-export default function Login({ history }) {
+export default function Login() {
+  const navigate = useNavigate();
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
 
   const [ loading, setLoading ] = useState(false);
 
   function handleNavigation( route ) {
-    history.push( route );
+    navigate( route );
   };
 
   async function handleSubmit() {

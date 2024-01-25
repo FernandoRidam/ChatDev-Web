@@ -1,13 +1,11 @@
 import React from 'react';
 
-import {
-  message,
-  open,
-  join,
-  exit,
-  edit,
-  trash,
-} from '../../assets';
+import message from '../../assets/message.svg';
+import open from '../../assets/open.svg';
+import join from '../../assets/join.svg';
+import exit from '../../assets/exit.svg';
+import edit from '../../assets/edit.svg';
+import trash from '../../assets/trash.svg';
 
 import {
   openMenuGroup,

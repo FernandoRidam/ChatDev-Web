@@ -2,9 +2,7 @@ import React from 'react';
 
 import './styles.css';
 
-import {
-  logo
-} from '../../../assets';
+import logo from '../../../assets/logo.png';
 
 export function Welcome() {
   return(

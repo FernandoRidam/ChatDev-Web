@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 
 import './styles.css';
 
-import {
-  logo,
-  search,
-  menu,
-  close,
-} from '../../../assets';
+import logo from '../../../assets/logo.png';
+import search from '../../../assets/search.svg';
+import menu from '../../../assets/menu.svg';
+import close from '../../../assets/close.svg';
 
 import {
   TextField,

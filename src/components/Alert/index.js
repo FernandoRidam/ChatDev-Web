@@ -2,10 +2,8 @@ import React from 'react';
 
 import './styles.css';
 
-import {
-  success,
-  warning,
-} from '../../assets';
+import success from '../../assets/success.svg';
+import warning from '../../assets/warning.svg';
 
 export function Alert() {
   return (

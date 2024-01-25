@@ -2,12 +2,9 @@ import React, { useState } from 'react';
 
 import './styles.css';
 
-import {
-  logo,
-  github,
-  info,
-  arrowLeft,
-} from '../../assets';
+import logo from '../../assets/logo.png';
+import info from '../../assets/info.svg';
+import arrowLeft from '../../assets/arrow_left.svg';
 
 import {
   TextField, GitHubButton, Button
@@ -30,8 +27,11 @@ import {
   verifyCode,
   login,
 } from '../../services';
+import { useNavigate } from 'react-router';
 
-export default function FinishRegister({ history}) {
+export default function FinishRegister() {
+  const navigate = useNavigate();
+
   const [ code, setCode ] = useState('');
   const [ password, setPassword ] = useState('');
   const [ confirmPassword, setConfirmPassword ] = useState('');
@@ -39,7 +39,7 @@ export default function FinishRegister({ history}) {
   const [ loading, setLoading ] = useState(false);
 
   function handleNavigation( route ) {
-    history.push( route );
+    navigate( route );
   };
 
   async function handleSubmit() {

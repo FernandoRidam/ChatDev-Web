@@ -2,11 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 import io from 'socket.io-client';
 
-import {
-  arrowLeft,
-  send,
-  noSend,
-} from '../../../assets';
+import arrowLeft from '../../../assets/arrow_left.svg';
+import send from '../../../assets/send.svg';
+import noSend from '../../../assets/send-disabled.svg';
 
 import {
   Message, TextField, Loading,
